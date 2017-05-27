@@ -1,17 +1,17 @@
 #include <graphics.h>
 #include <conio.h>
 #include <cstdio>
-#include <cstdlib>		/* srand, rand */
-#include <ctime>		/* time */
+#include <cstdlib>	/* srand, rand */
+#include <ctime>	/* time */
 
 #define TILE_LENGTH 36	// 每个小格子的边长
 #define MAX_LEVEL   15	// 记忆矩阵最大阶数
 #define CHANCES     15	// 一轮游戏的总次数
 
 struct Board{
-	int level; // 当前游戏Level(即记忆矩阵的阶数)
-	int up, down, left, right;			// 分别代表矩阵的上下左右四个外边框的坐标
-	int tile[MAX_LEVEL][MAX_LEVEL];		// 格子状态，需要被记忆的标记为1，不需要的标记为0
+	int level;	// 当前游戏Level(即记忆矩阵的阶数)
+	int up, down, left, right;		// 分别代表矩阵的上下左右四个外边框的坐标
+	int tile[MAX_LEVEL][MAX_LEVEL];	// 格子状态，需要被记忆的标记为1，不需要的标记为0
 	int rand_x[MAX_LEVEL], rand_y[MAX_LEVEL]; // 表示随机生成的记忆格子的位子
 } board;
 
@@ -81,7 +81,7 @@ int run_game(){
 	setcolor(LIGHTBLUE);
 	for (int i = board.left; i <= board.right; i += TILE_LENGTH) line(i, board.up, i, board.down);
 	for (int i = board.up;   i <= board.down;  i += TILE_LENGTH) line(board.left, i, board.right, i);
-    // 画粗体外边框
+	// 画粗体外边框
 	setlinestyle(PS_SOLID, 10);
 	setcolor(LIGHTBLUE);
 	line(board.left  - 5, board.up   - 5, board.right + 5, board.up   - 5);
@@ -126,7 +126,7 @@ int judge(){
 				tmpy = (m.y - board.up  ) / TILE_LENGTH;
 				if(board.tile[tmpx][tmpy]==0)	// 如果鼠标所点的格子不是"记忆格子"，游戏失败，返回0
 					return 0;
-				else if(board.tile[tmpx][tmpy]==1){ // 如果鼠标所点格子正确，标记该格子，并且count++,直到(count==level)游戏成功返回1
+				else if(board.tile[tmpx][tmpy]==1){	// 如果鼠标所点格子正确，标记该格子，并且count++,直到(count==level)游戏成功返回1
 					setfillcolor(WHITE);
 					bar(board.left + TILE_LENGTH * tmpx + 1, board.up + TILE_LENGTH * tmpy + 1,
 						board.left + TILE_LENGTH * (tmpx + 1) - 1, board.up + TILE_LENGTH * (tmpy + 1) - 1);

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2017/5/27 23:44:46。
+﻿生成启动时间为 2017/5/28 0:09:37。
      1>项目“D:\JiChong\GitHub\Memory_Matrix\Memory_Matrix.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Memory_Matrix.cpp
@@ -11,4 +11,4 @@
 
 生成成功。
 
-已用时间 00:00:01.10
+已用时间 00:00:00.98
